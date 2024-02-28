@@ -39,11 +39,11 @@ void llamaCiclo()
     bool repetir = true;
     bool primeraIteracion = true;
 
-    float promedio_facultad_1;
-    float promedio_facultad_2;
-    float promedio_facultad_3;
+    float promedioFacultad1;
+    float promedioFacultad2;
+    float promedioFacultad3;
     float promedioMejor;
-    float promedioMejorfinal;
+    float promedioMejorFinal;
     char mejorFacultad[MAXIMA_LONGITUD_CADENA];
     char mejorFacultadFinal[MAXIMA_LONGITUD_CADENA];
 
@@ -52,32 +52,32 @@ void llamaCiclo()
     do
     {
         system("cls");
-        promedio_facultad_1=0;
-        promedio_facultad_2=0;
-        promedio_facultad_3=0;
+        promedioFacultad1=0;
+        promedioFacultad2=0;
+        promedioFacultad3=0;
         cout << "*** Comparativo de Facultades ***" << endl << endl;
         llenarMatriz(matriz_facultad_1);
-        promedio_facultad_1 = imprimirMatriz(matriz_facultad_1, alumnos, "Facultad de Ingenieria");
+        promedioFacultad1 = imprimirMatriz(matriz_facultad_1, alumnos, "Facultad de Ingenieria");
         llenarMatriz(matriz_facultad_2);
-        promedio_facultad_2 = imprimirMatriz(matriz_facultad_2, alumnos, "Facultad de Arquitectura");
+        promedioFacultad2 = imprimirMatriz(matriz_facultad_2, alumnos, "Facultad de Arquitectura");
         llenarMatriz(matriz_facultad_3);
-        promedio_facultad_3 = imprimirMatriz(matriz_facultad_3, alumnos, "Facultad de Administracion");
-        if (promedio_facultad_1 > promedio_facultad_2 && promedio_facultad_1 > promedio_facultad_3)
+        promedioFacultad3 = imprimirMatriz(matriz_facultad_3, alumnos, "Facultad de Administracion");
+        if (promedioFacultad1 > promedioFacultad2 && promedioFacultad1 > promedioFacultad3)
         {
-            cout << " La facultad con el mejor promedio es : " << "Facultad de Ingenieria" << " Promedio: " << promedio_facultad_1 << endl;
-            promedioMejor = promedio_facultad_1;
+            cout << " La facultad con el mejor promedio es : " << "Facultad de Ingenieria" << " Promedio: " << promedioFacultad1 << endl;
+            promedioMejor = promedioFacultad1;
             memcpy(mejorFacultad, "Facultad de Ingenieria" , MAXIMA_LONGITUD_CADENA);
         } else
-        if (promedio_facultad_2 > promedio_facultad_1 && promedio_facultad_2 > promedio_facultad_3)
+        if (promedioFacultad2 > promedioFacultad1 && promedioFacultad2 > promedioFacultad3)
         {
-            cout << " La facultad con el mejor promedio es : " << "Facultad de Arquitectura" << " Promedio: " << promedio_facultad_2 << endl;
-            promedioMejor = promedio_facultad_2;
+            cout << " La facultad con el mejor promedio es : " << "Facultad de Arquitectura" << " Promedio: " << promedioFacultad2 << endl;
+            promedioMejor = promedioFacultad2;
             memcpy(mejorFacultad, "Facultad de Arquitectura" , MAXIMA_LONGITUD_CADENA);
         } else
-        if (promedio_facultad_3 > promedio_facultad_2 && promedio_facultad_3 > promedio_facultad_1)
+        if (promedioFacultad3 > promedioFacultad2 && promedioFacultad3 > promedioFacultad1)
         {
-            cout << " La facultad con el mejor promedio es : " << "Facultad de Administracion" << " Promedio: " << promedio_facultad_3 << endl;
-            promedioMejor = promedio_facultad_3;
+            cout << " La facultad con el mejor promedio es : " << "Facultad de Administracion" << " Promedio: " << promedioFacultad3 << endl;
+            promedioMejor = promedioFacultad3;
             memcpy(mejorFacultad, "Facultad de Administracion" , MAXIMA_LONGITUD_CADENA);
         } else
         {
@@ -91,15 +91,15 @@ void llamaCiclo()
         }
         if (primeraIteracion == true)
         {
-            promedioMejorfinal=promedioMejor;
+            promedioMejorFinal=promedioMejor;
             memcpy(mejorFacultadFinal, mejorFacultad, MAXIMA_LONGITUD_CADENA);
             primeraIteracion = false;
         }
         else
         {
-            if (promedioMejor > promedioMejorfinal)
+            if (promedioMejor > promedioMejorFinal)
                 {
-                promedioMejorfinal=promedioMejor;
+                promedioMejorFinal=promedioMejor;
                 memcpy(mejorFacultadFinal, mejorFacultad, MAXIMA_LONGITUD_CADENA);
             }
         }
@@ -109,7 +109,7 @@ void llamaCiclo()
 
     cout <<  "Este es el resultado final de todas las iteraciones ejecutadas." << endl << endl;
     cout <<  "La facultad con mejor promedio final fue : " << mejorFacultadFinal << endl;
-    cout <<  "Con un promedio de                       : " << promedioMejorfinal << endl << endl << endl ;
+    cout <<  "Con un promedio de                       : " << promedioMejorFinal << endl << endl << endl ;
 
 
 }
