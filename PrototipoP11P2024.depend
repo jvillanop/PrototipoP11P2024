@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1709137734 source:c:\users\bdg.josue.villagran\documents\umg\examenparcial 1\prototipop11p2024\main.cpp
+	<stdio.h>
+	<stdlib.h>
+	<unistd.h>
+	<string.h>
+	<iostream>
+	<iomanip>
+	<cstdlib>
+
