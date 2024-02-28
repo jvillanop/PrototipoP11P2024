@@ -9,7 +9,7 @@
 #include <string.h>
 #include <iostream>
 #include <iomanip>
-
+#include <cstdlib>
 
 using namespace std;
 
@@ -65,19 +65,19 @@ void llamaCiclo()
         if (promedio_facultad_1 > promedio_facultad_2 && promedio_facultad_1 > promedio_facultad_3)
         {
             cout << " La facultad con el mejor promedio es : " << "Facultad de Ingenieria" << " Promedio: " << promedio_facultad_1 << endl;
-            promedio_mejor = promedio_facultad_1;
+            promedioMejor = promedio_facultad_1;
             memcpy(mejorFacultad, "Facultad de Ingenieria" , MAXIMA_LONGITUD_CADENA);
         } else
         if (promedio_facultad_2 > promedio_facultad_1 && promedio_facultad_2 > promedio_facultad_3)
         {
             cout << " La facultad con el mejor promedio es : " << "Facultad de Arquitectura" << " Promedio: " << promedio_facultad_2 << endl;
-            promedio_mejor = promedio_facultad_2;
+            promedioMejor = promedio_facultad_2;
             memcpy(mejorFacultad, "Facultad de Arquitectura" , MAXIMA_LONGITUD_CADENA);
         } else
         if (promedio_facultad_3 > promedio_facultad_2 && promedio_facultad_3 > promedio_facultad_1)
         {
             cout << " La facultad con el mejor promedio es : " << "Facultad de Administracion" << " Promedio: " << promedio_facultad_3 << endl;
-            promedio_mejor = promedio_facultad_3;
+            promedioMejor = promedio_facultad_3;
             memcpy(mejorFacultad, "Facultad de Administracion" , MAXIMA_LONGITUD_CADENA);
         } else
         {
@@ -103,9 +103,13 @@ void llamaCiclo()
                 memcpy(mejorFacultadFinal, mejorFacultad, MAXIMA_LONGITUD_CADENA);
             }
         }
-
+    system("cls");
     } while (repetir);
 
+
+    cout <<  "Este es el resultado final de todas las iteraciones ejecutadas." << endl << endl;
+    cout <<  "La facultad con mejor promedio final fue : " << mejorFacultadFinal << endl;
+    cout <<  "Con un promedio de                       : " << promedioMejorfinal << endl << endl << endl ;
 
 
 }
